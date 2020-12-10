@@ -2,7 +2,6 @@ package apihandlers
 
 import (
 	"encoding/json"
-	"fmt"
 	"github.com/course_spec/newApi/apimodels"
 	"github.com/gorilla/mux"
 	"log"
@@ -109,9 +108,9 @@ func DeleteEmployee(w http.ResponseWriter,r *http.Request) {
 			log.Println("Found that Id")
 			employees = append(employees[:i],employees[i+1:]...)
 
-			fmt.Fprintln(w,"employee with that ID successfully deleted")
+			log.Println(w,"employee with that ID successfully deleted")
 			return
 		}
 	}
-	fmt.Fprintln(w,"employee with that ID does not exist")
+	log.Println(w,"employee with that ID does not exist")
 }
